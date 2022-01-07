@@ -1,0 +1,6 @@
+1. https://swapi.py4e.com/api/starships/10
+2. https://swapi.py4e.com/api/planets => "count": 61
+3. https://swapi.py4e.com/api/people?search=Darth  Vader => "birth_year": "41.9BBY"
+4. https://swapi.py4e.com/api/people/1?format=wookiee
+5. https://swapi.py4e.com/api/people?search=r2-d2
+    => "homeworld" => "https://swapi.py4e.com/api/planets/8"

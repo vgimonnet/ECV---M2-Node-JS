@@ -2,20 +2,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({ message: 'All users' });
-});
+const { getAllUsers, getUser, createUser, deleteUser } = require('../routers/users')
 
-router.get('/:id', (req, res) => {
-  res.json({ message: `User id : ${ req.params.id }` });
-});
+router.get('/', getAllUsers(req, res));
 
-router.post('/', (req, res) => {
-  res.json({ message: 'Create user' });
-});
+router.get('/:id', getUser(req, res));
 
-router.delete('/:id', (req, res) => {
-  res.json({ message: `Delete user id : ${ req.params.id }` });
-});
+router.post('/', createUser(req, res));
+
+router.delete('/:id', deleteUser(req, res));
 
 module.exports = router;

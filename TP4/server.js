@@ -5,7 +5,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const basicRoutes = require('./routes.js');
+const basicRoutes = require('./routers/routes.js');
 app.use('/', basicRoutes);
 
 const userRoutes = require('./handlers/users.js');

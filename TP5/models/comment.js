@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.UUID,
           allowNull: false
         },
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        as: 'post'
       });
       Comment.belongsTo(models.User, {
         foreignKey: {
@@ -24,11 +25,18 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.UUID,
           allowNull: false
         },
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        as: 'author'
       });
     }
   };
   Comment.init({
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false
+    },
     content: DataTypes.TEXT,
     date: DataTypes.DATE
   }, {

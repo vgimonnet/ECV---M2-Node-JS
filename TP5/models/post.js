@@ -16,12 +16,19 @@ module.exports = (sequelize, DataTypes) => {
           type: DataTypes.UUID,
           allowNull: false
         },
-        onDelete: 'CASCADE'
+        onDelete: 'CASCADE',
+        as: 'author'
       });
-      Post.hasMany(models.Comment);
+      Post.hasMany(models.Comment, { as: 'comments' });
     }
   };
   Post.init({
+    id: {
+      type: DataTypes.UUID,
+      primaryKey: true,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false
+    },
     title: DataTypes.STRING,
     content: DataTypes.TEXT,
     date: DataTypes.DATE

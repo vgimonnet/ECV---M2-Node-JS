@@ -16,10 +16,7 @@ module.exports = {
       postId: {
         type: Sequelize.UUID,
         references: {
-          model: {
-            tableName: 'posts',
-            schema: 'schema'
-          },
+          model: 'Posts',
           key: 'id'
         },
         allowNull: false,
@@ -28,10 +25,7 @@ module.exports = {
       authorId: {
         type: Sequelize.UUID,
         references: {
-          model: {
-            tableName: 'users',
-            schema: 'schema'
-          },
+          model: 'Users',
           key: 'id'
         },
         allowNull: false,

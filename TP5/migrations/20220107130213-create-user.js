@@ -5,7 +5,9 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.UUID
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        unique: true
       },
       lastname: {
         type: Sequelize.STRING
@@ -25,13 +27,11 @@ module.exports = {
       roleId: {
         type: Sequelize.UUID,
         references: {
-          model: {
-            tableName: 'roles',
-            schema: 'schema'
-          },
+          model: 'Roles',
           key: 'id'
         },
-        allowNull: true
+        allowNull: true,
+        onDelete: 'SET NULL'
       },
       createdAt: {
         allowNull: false,

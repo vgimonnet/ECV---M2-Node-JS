@@ -19,10 +19,7 @@ module.exports = {
       authorId: {
         type: Sequelize.UUID,
         references: {
-          model: {
-            tableName: 'users',
-            schema: 'schema'
-          },
+          model: 'Users',
           key: 'id'
         },
         allowNull: false,

@@ -1,10 +1,10 @@
-const { Comment } = require('../models');
+const { Role } = require('../models');
 
 const getAll = async (req, res) => {
   try {
-    const comments = await Comment.findAll();
+    const roles = await Role.findAll();
     
-    res.status(200).json(comments);
+    res.status(200).json(roles);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -13,9 +13,9 @@ const getAll = async (req, res) => {
 
 const getOne = async (req, res) => {
   try {
-    const comment = await Comment.findByPk(req.params.id);
+    const role = await Role.findByPk(req.params.id);
 
-    res.status(200).json(comment);
+    res.status(200).json(role);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -23,11 +23,11 @@ const getOne = async (req, res) => {
 
 const createOne = async (req, res) => {
   try {
-    const comment = await Comment.create(req.body);
+    const role = await Role.create(req.body);
 
     res.status(200).json({
-      message: 'Comment created',
-      data: comment
+      message: 'Role created',
+      data: role
     });
   } catch (error) {
     res.status(500).json(error);
@@ -36,15 +36,15 @@ const createOne = async (req, res) => {
 
 const updateOne = async (req, res) => {
   try {
-    const comment = await Comment.update(req.body, {
+    const role = await Role.update(req.body, {
       where: {
         id: req.params.id
       }
     });
     
     res.status(200).json({
-      message: 'Comment updated',
-      data: comment
+      message: 'Role updated',
+      data: role
     });
   } catch (error) {
     res.status(500).json(error);
@@ -53,14 +53,14 @@ const updateOne = async (req, res) => {
 
 const removeOne = async (req, res) => {
   try {
-    const comment = await Comment.destroy({
+    const role = await Role.destroy({
       where: {
         id: req.params.id
       }
     });
     
     res.status(200).json({
-      message: 'Comment deleted'
+      message: 'Role deleted'
     });
   } catch (error) {
     res.status(500).json(error);

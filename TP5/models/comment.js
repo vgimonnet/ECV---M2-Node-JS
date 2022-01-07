@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Comment.belongsTo(models.Post, {
         foreignKey: {
-          name: 'commentId',
+          name: 'postId',
           type: DataTypes.UUID,
           allowNull: false
         },
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       });
       Comment.belongsTo(models.User, {
         foreignKey: {
-          name: 'authorId',
+          name: 'userId',
           type: DataTypes.UUID,
           allowNull: false
         },

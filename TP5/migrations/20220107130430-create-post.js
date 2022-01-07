@@ -16,7 +16,7 @@ module.exports = {
       date: {
         type: Sequelize.DATE
       },
-      authorId: {
+      userId: {
         type: Sequelize.UUID,
         references: {
           model: 'Users',

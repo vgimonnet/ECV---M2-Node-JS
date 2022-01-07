@@ -1,11 +1,12 @@
-const { Post, Comment } = require('../models');
+const { Post } = require('../models');
 
 const getAll = async (req, res) => {
   try {
-    const posts = await Post.findAll();
+    const posts = await Post.findAll({ include: ['author'] });
     
     res.status(200).json(posts);
   } catch (error) {
+    console.log(error)
     res.status(500).json(error);
   }
 }

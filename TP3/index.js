@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 // Exo 1
 const isStringTooLong = (string) => {
   return new Promise((resolve, reject) => {
@@ -43,7 +45,7 @@ isMajor('21/04/1998')
 .catch((error) => console.log(error));
 
 // Exo 5
-const f = async () => {
+const execute = async () => {
   try {
     const isTooLong = await isStringTooLong('Hello World !');
     
@@ -69,4 +71,47 @@ const f = async () => {
   }
 }
 
-f();
+execute();
+
+
+// Exo 6 
+const axiosExecute = async () => {
+  const baseUrl = 'https://swapi.py4e.com/api';
+  try {
+    const response = await axios.get(`${ baseUrl }/starships/10`);
+    console.log('starship id 10', response.data);
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    const response = await axios.get(`${ baseUrl }/planets`);
+    console.log('total planets', response.data.count);
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    const response = await axios.get(`${ baseUrl }/people?search=Darth  Vader`);
+    console.log('Darth Vader birth year', response.data.results[0].birth_year);
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    const response = await axios.get(`${ baseUrl }/people/13?format=wookiee`);
+    console.log('People id 13 wookiee', response.data);
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    const response = await axios.get(`${ baseUrl }/people?search=r2-d2`);
+    const responseHomeworld = await axios.get(response.data.results[0].homeworld);
+    console.log('R2-D2 Homeworld residents', responseHomeworld);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+axiosExecute();

@@ -1,17 +1,17 @@
 const { Post } = require('../models');
+const createError = require('http-errors');
 
-const getAll = async (req, res) => {
+const getAll = async (req, res, next) => {
   try {
     const posts = await Post.findAll({ include: ['author'] });
     
     res.status(200).json(posts);
   } catch (error) {
-    console.log(error)
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 
-const getOne = async (req, res) => {
+const getOne = async (req, res, next) => {
   try {
     const post = req.query.comments === false
     ? await Post.findByPk(req.params.id)
@@ -19,11 +19,11 @@ const getOne = async (req, res) => {
 
     res.status(200).json(post);
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 
-const createOne = async (req, res) => {
+const createOne = async (req, res, next) => {
   try {
     const post = await Post.create(req.body);
 
@@ -32,11 +32,11 @@ const createOne = async (req, res) => {
       data: post
     });
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 
-const updateOne = async (req, res) => {
+const updateOne = async (req, res, next) => {
   try {
     const post = await Post.update(req.body, {
       where: {
@@ -49,11 +49,11 @@ const updateOne = async (req, res) => {
       data: post
     });
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 
-const removeOne = async (req, res) => {
+const removeOne = async (req, res, next) => {
   try {
     const post = await Post.destroy({
       where: {
@@ -65,7 +65,7 @@ const removeOne = async (req, res) => {
       message: 'Post deleted'
     });
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 

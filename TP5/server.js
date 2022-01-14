@@ -8,30 +8,35 @@ const app = express();
  */
 
 
-const logDate = (req, res, next) => {
-  console.log(new Date());
-  next();
-}
+// const logDate = (req, res, next) => {
+//   console.log(new Date());
+//   next();
+// }
 
-const setHeaterResponse = (req, res, next) => {
-  res.set('Application-name', 'ecv-digital');
-  next();
-}
+// const setHeaterResponse = (req, res, next) => {
+//   res.set('Application-name', 'ecv-digital');
+//   next();
+// }
 
-const isAuthorized = (req, res, next) => {
-  if (typeof req.headers.authorization == 'undefined') {
-    return res.status(403).json({
-      message: 'Authorization header required'
-    });
-  }
-  next();
-}
+// const isAuthorized = (req, res, next) => {
+//   if (typeof req.headers.authorization == 'undefined') {
+//     return res.status(403).json({
+//       message: 'Authorization header required'
+//     });
+//   }
+//   next();
+// }
 
-app.use(logDate);
-app.use(setHeaterResponse);
-app.use(isAuthorized);
+// app.use(logDate);
+// app.use(setHeaterResponse);
+// app.use(isAuthorized);
 
 // TP7
+
+
+const errorHandler = require('./middlewares/error-handler.middleware');
+const joiErrorHandler = require('./middlewares/joi-error-handler.middleware');
+
 
 app.use(bodyParser.json());
 
@@ -46,6 +51,10 @@ app.use('/comments', commentRoutes);
 
 const postRoutes = require('./routers/post.routes.js');
 app.use('/posts', postRoutes);
+
+
+app.use(joiErrorHandler);
+app.use(errorHandler);
 
 app.listen(3000, () => {
   console.log('Server starts and listens on port 3000');

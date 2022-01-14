@@ -1,27 +1,28 @@
 const { Role } = require('../models');
+const createError = require('http-errors');
 
-const getAll = async (req, res) => {
+const getAll = async (req, res, next) => {
   try {
     const roles = await Role.findAll();
     
     res.status(200).json(roles);
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
   
 }
 
-const getOne = async (req, res) => {
+const getOne = async (req, res, next) => {
   try {
     const role = await Role.findByPk(req.params.id);
 
     res.status(200).json(role);
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 
-const createOne = async (req, res) => {
+const createOne = async (req, res, next) => {
   try {
     const role = await Role.create(req.body);
 
@@ -30,11 +31,11 @@ const createOne = async (req, res) => {
       data: role
     });
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 
-const updateOne = async (req, res) => {
+const updateOne = async (req, res, next) => {
   try {
     const role = await Role.update(req.body, {
       where: {
@@ -47,11 +48,11 @@ const updateOne = async (req, res) => {
       data: role
     });
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 
-const removeOne = async (req, res) => {
+const removeOne = async (req, res, next) => {
   try {
     const role = await Role.destroy({
       where: {
@@ -63,7 +64,7 @@ const removeOne = async (req, res) => {
       message: 'Role deleted'
     });
   } catch (error) {
-    res.status(500).json(error);
+    return next(createError(500));
   }
 }
 

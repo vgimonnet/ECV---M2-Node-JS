@@ -6,6 +6,13 @@ const { commentValidator } = require('../validators');
 
 const { getAll, getOne, createOne, updateOne, removeOne } = require('../handlers/comment.handlers');
 
+const setContext = (req, res, next) => {
+  res.set('App-Context', 'Comment');
+  next();
+}
+
+router.use(setContext);
+
 router.get('/',validator.response(commentValidator.getCommentsSchema), (req, res) => getAll(req, res));
 
 router.get('/:id', validator.response(commentValidator.getCommentSchema), (req, res) => getOne(req, res));

@@ -3,6 +3,36 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+/**
+ * TP 7
+ */
+
+
+const logDate = (req, res, next) => {
+  console.log(new Date());
+  next();
+}
+
+const setHeaterResponse = (req, res, next) => {
+  res.set('Application-name', 'ecv-digital');
+  next();
+}
+
+const isAuthorized = (req, res, next) => {
+  if (typeof req.headers.authorization == 'undefined') {
+    return res.status(403).json({
+      message: 'Authorization header required'
+    });
+  }
+  next();
+}
+
+app.use(logDate);
+app.use(setHeaterResponse);
+app.use(isAuthorized);
+
+// TP7
+
 app.use(bodyParser.json());
 
 const userRoutes = require('./routers/user.routes.js');

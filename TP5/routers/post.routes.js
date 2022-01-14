@@ -6,6 +6,13 @@ const { postValidator } = require('../validators');
 
 const { getAll, getOne, createOne, updateOne, removeOne } = require('../handlers/post.handlers');
 
+const setContext = (req, res, next) => {
+  res.set('App-Context', 'Post');
+  next();
+}
+
+router.use(setContext);
+
 router.get('/', validator.response(postValidator.getPostsSchema), (req, res) => getAll(req, res));
 
 router.get('/:id', validator.query(postValidator.commentsQuerySchema), validator.response(postValidator.getPostSchema), (req, res) => getOne(req, res));

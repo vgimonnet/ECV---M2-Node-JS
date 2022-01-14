@@ -6,7 +6,14 @@ const { userValidator } = require('../validators');
 
 const { getAll, getOne, createOne, updateOne, removeOne } = require('../handlers/user.handlers');
 
-router.get('/', validator.response(userValidator.getUsersSchema), (req, res) => getAll(req, res));
+const setContext = (req, res, next) => {
+  res.set('App-Context', 'User');
+  next();
+}
+
+router.use(setContext);
+
+router.get('/', validator.response(userValidator.getUsersSchema), getAll);
 
 router.get('/:id', validator.query(userValidator.postsQuerySchema), validator.response(userValidator.getUserSchema), (req, res) => getOne(req, res));
 

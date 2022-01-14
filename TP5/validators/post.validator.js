@@ -29,7 +29,7 @@ const updatePostSchema = Joi.object({
 });
 
 const commentsQuerySchema = Joi.object({
-  comments: Joi.string().empty('').default('yes')
+  comments: Joi.boolean().required()
 });
 
 module.exports = {

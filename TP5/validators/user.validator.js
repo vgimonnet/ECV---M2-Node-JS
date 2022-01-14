@@ -35,7 +35,7 @@ const updateUserSchema = Joi.object({
 });
 
 const postsQuerySchema = Joi.object({
-  posts: Joi.string().empty('').default('yes')
+  posts: Joi.boolean().required()
 });
 
 module.exports = {

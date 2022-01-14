@@ -142,13 +142,19 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/users/4b97351e-1df3-448d-bf85-dc5107dffb0c",
+							"raw": "{{baseUrl}}/users/4b97351e-1df3-448d-bf85-dc5107dffb0c?posts=true",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"users",
 								"4b97351e-1df3-448d-bf85-dc5107dffb0c"
+							],
+							"query": [
+								{
+									"key": "posts",
+									"value": "true"
+								}
 							]
 						}
 					},
@@ -231,7 +237,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/users/4b97351e-1df3-448d-bf85-dc5107dffb0c?posts=no",
+							"raw": "{{baseUrl}}/users/4b97351e-1df3-448d-bf85-dc5107dffb0c?posts=false",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -242,7 +248,7 @@
 							"query": [
 								{
 									"key": "posts",
-									"value": "no"
+									"value": "false"
 								}
 							]
 						}
@@ -277,13 +283,19 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/posts/3993b87e-7337-4912-95e6-58e74e51a790",
+							"raw": "{{baseUrl}}/posts/3993b87e-7337-4912-95e6-58e74e51a790?comments=true",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"posts",
 								"3993b87e-7337-4912-95e6-58e74e51a790"
+							],
+							"query": [
+								{
+									"key": "comments",
+									"value": "true"
+								}
 							]
 						}
 					},
@@ -366,7 +378,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/posts/3993b87e-7337-4912-95e6-58e74e51a790?comments=no",
+							"raw": "{{baseUrl}}/posts/3993b87e-7337-4912-95e6-58e74e51a790?comments=false",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -377,7 +389,7 @@
 							"query": [
 								{
 									"key": "comments",
-									"value": "no"
+									"value": "false"
 								}
 							]
 						}

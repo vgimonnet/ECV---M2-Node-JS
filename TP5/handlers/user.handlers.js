@@ -13,7 +13,7 @@ const getAll = async (req, res) => {
 
 const getOne = async (req, res) => {
   try {
-    const user = req.query.posts === 'no'
+    const user = req.query.posts === false
     ? await User.findByPk(req.params.id, { include: ['role'] })
     : await User.findByPk(req.params.id, { include: ['role', 'posts'] });
 

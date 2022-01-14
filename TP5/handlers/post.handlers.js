@@ -13,7 +13,7 @@ const getAll = async (req, res) => {
 
 const getOne = async (req, res) => {
   try {
-    const post = req.query.comments === 'no'
+    const post = req.query.comments === false
     ? await Post.findByPk(req.params.id)
     : await Post.findByPk(req.params.id, { include: ['comments'] });
 

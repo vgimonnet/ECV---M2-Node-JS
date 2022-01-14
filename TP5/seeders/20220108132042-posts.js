@@ -15,7 +15,7 @@ module.exports = {
           id: v4(),
           title: "Title n°1",
           content: "First post",
-          date: "2022-01-08",
+          date: "2022-01-08 00:00:00.000 +00:00",
           userId: vgimonnet.id,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -24,7 +24,7 @@ module.exports = {
           id: v4(),
           title: "Title n°2",
           content: "Second post",
-          date: "2022-01-08",
+          date: "2022-01-08 00:00:00.000 +00:00",
           userId: contrib.id,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -33,7 +33,7 @@ module.exports = {
           id: v4(),
           title: "Title n°3",
           content: "Third post",
-          date: "2022-01-08",
+          date: "2022-01-08 00:00:00.000 +00:00",
           userId: user.id,
           createdAt: new Date(),
           updatedAt: new Date()

@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "9b28d45c-4b10-44d6-b9de-c65cd7319234",
+		"name": "ECV NODE TP5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "roles",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/roles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/roles/94bfd00d-1e33-4ff3-9004-280819a321d3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles",
+								"94bfd00d-1e33-4ff3-9004-280819a321d3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"newRole\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/roles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch one",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"contributor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/roles/38574b38-71e0-4251-b2a9-7fb33261f414",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles",
+								"38574b38-71e0-4251-b2a9-7fb33261f414"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/roles/d908df7a-7b4f-4ad8-b6c4-c9ea082c03d4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"roles",
+								"d908df7a-7b4f-4ad8-b6c4-c9ea082c03d4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/4b97351e-1df3-448d-bf85-dc5107dffb0c",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"4b97351e-1df3-448d-bf85-dc5107dffb0c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"firstname\",\r\n    \"lastname\": \"lastname\",\r\n    \"username\": \"username\",\r\n    \"email\": \"toto@test.fr\",\r\n    \"github\": \"https://github.com/vgimonnet\",\r\n    \"roleId\": \"94bfd00d-1e33-4ff3-9004-280819a321d3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch one",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"github\": \"https://github.com/vgimonnet/\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/9a17d467-b1a1-4ea0-88be-a42db19d4550",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"9a17d467-b1a1-4ea0-88be-a42db19d4550"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/8e9032c3-afc8-4152-8722-4b0d61610045",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"8e9032c3-afc8-4152-8722-4b0d61610045"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one no posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/4b97351e-1df3-448d-bf85-dc5107dffb0c?posts=no",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"4b97351e-1df3-448d-bf85-dc5107dffb0c"
+							],
+							"query": [
+								{
+									"key": "posts",
+									"value": "no"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts/3993b87e-7337-4912-95e6-58e74e51a790",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								"3993b87e-7337-4912-95e6-58e74e51a790"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Titre\",\r\n    \"content\": \"content\",\r\n    \"date\": \"2022-01-08 00:00:00.000 +00:00\",\r\n    \"userId\": \"4b97351e-1df3-448d-bf85-dc5107dffb0c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/posts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch one",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Updated title\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/posts/59d58cf5-f5a5-473f-aa0c-4a2fad0d37ec",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								"59d58cf5-f5a5-473f-aa0c-4a2fad0d37ec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts/59d58cf5-f5a5-473f-aa0c-4a2fad0d37ec",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								"59d58cf5-f5a5-473f-aa0c-4a2fad0d37ec"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one no comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts/3993b87e-7337-4912-95e6-58e74e51a790?comments=no",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								"3993b87e-7337-4912-95e6-58e74e51a790"
+							],
+							"query": [
+								{
+									"key": "comments",
+									"value": "no"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/comments/8f36032a-1fd2-4fd5-b4cc-7c1df7e96598",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								"8f36032a-1fd2-4fd5-b4cc-7c1df7e96598"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create one",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"New comment\",\r\n    \"date\": \"2022-08-01 00:00:00.000 +00:00\",\r\n    \"userId\": \"4b97351e-1df3-448d-bf85-dc5107dffb0c\",\r\n    \"postId\": \"3993b87e-7337-4912-95e6-58e74e51a790\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch one",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2022-01-14 00:00:00.000 +00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/comments/5a6e9856-6803-4499-963b-acad8d9ca3c7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								"5a6e9856-6803-4499-963b-acad8d9ca3c7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/comments/5a6e9856-6803-4499-963b-acad8d9ca3c7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments",
+								"5a6e9856-6803-4499-963b-acad8d9ca3c7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

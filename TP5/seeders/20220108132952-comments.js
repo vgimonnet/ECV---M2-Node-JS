@@ -18,7 +18,7 @@ module.exports = {
         {
           id: v4(),
           content: "First comment",
-          date: "2022-01-08",
+          date: "2022-01-08 00:00:00.000 +00:00",
           userId: vgimonnet.id,
           postId: firstPost.id,
           createdAt: new Date(),
@@ -27,7 +27,7 @@ module.exports = {
         {
           id: v4(),
           content: "Second comment",
-          date: "2022-01-08",
+          date: "2022-01-08 00:00:00.000 +00:00",
           userId: contrib.id,
           postId: secondPost.id,
           createdAt: new Date(),
@@ -36,7 +36,7 @@ module.exports = {
         {
           id: v4(),
           content: "Third comment",
-          date: "2022-01-08",
+          date: "2022-01-08 00:00:00.000 +00:00",
           userId: user.id,
           postId: thirdPost.id,
           createdAt: new Date(),

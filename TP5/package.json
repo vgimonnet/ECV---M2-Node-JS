@@ -1,6 +1,6 @@
 {
   "name": "tp5",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,8 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
+    "express-joi-validation": "^5.0.1",
+    "joi": "^17.5.0",
     "sequelize": "^6.12.5",
     "sequelize-cli": "^6.3.0",
     "sqlite3": "^5.0.2",
